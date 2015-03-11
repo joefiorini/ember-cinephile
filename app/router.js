@@ -6,7 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('movie');
+  this.resource('movie', function() {
+    this.route('show', {
+      path: '/:id'
+    });
+  });
 });
 
 export default Router;
