@@ -8,10 +8,7 @@ module.exports = function(app) {
   });
 
   moviesRouter.get('/:id', function(req, res) {
-    var movies = require('../../data/movie-page1.json');
-    var movie = movies.results.filter(function(movie) {
-      return movie.id == req.params.id;
-    });
+    var movie = require('../../data/movie/' + req.params.id + '.json');
     res.send(movie);
   });
 
